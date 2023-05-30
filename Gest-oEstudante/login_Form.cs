@@ -20,7 +20,7 @@ namespace Gest_oEstudante
         private void login_Form_Load(object sender, EventArgs e)
         {
             //define a imagem da picture box
-            pictureBox1.Image = Image.FromFile("../../Imagens/user.png");
+            pictureBox1.Image = Image.FromFile("../../Imagens/User.png");
         }
     }
 }
