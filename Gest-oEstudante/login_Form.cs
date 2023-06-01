@@ -49,7 +49,9 @@ namespace Gest_oEstudante
             }
             else 
             {
-                MessageBox.Show("NÃO");
+                MessageBox.Show("Nome do usuario invalido", 
+                    "Erro de Login",
+                    MessageBoxButtons.OK, MessageBoxIcon.Error);
             }
         }
     }
