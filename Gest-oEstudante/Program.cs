@@ -16,7 +16,17 @@ namespace Gest_oEstudante
         {
             Application.EnableVisualStyles();
             Application.SetCompatibleTextRenderingDefault(false);
-            Application.Run(new login_Form());
+            //Application.Run(new login_Form());
+            login_Form telaDeLogin = new login_Form();
+
+            if (telaDeLogin.ShowDialog() == DialogResult.OK)
+            {
+                Application.Run(new FormPrincipal());
+            }
+            else
+            {
+                Application.Exit();
+            }
         }
     }
 }

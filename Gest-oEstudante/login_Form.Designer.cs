@@ -120,7 +120,7 @@
             this.Controls.Add(this.txtUsuario);
             this.Name = "login_Form";
             this.StartPosition = System.Windows.Forms.FormStartPosition.CenterScreen;
-            this.Text = "Form1";
+            this.Text = "SGE-entrar";
             this.Load += new System.EventHandler(this.login_Form_Load);
             ((System.ComponentModel.ISupportInitialize)(this.pictureBox1)).EndInit();
             this.ResumeLayout(false);
