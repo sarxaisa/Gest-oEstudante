@@ -22,5 +22,10 @@ namespace Gest_oEstudante
             FormInserirEstudante inserirEstudante = new FormInserirEstudante();
             inserirEstudante.Show(this);
         }
+
+        private void groupBox1_Enter(object sender, EventArgs e)
+        {
+
+        }
     }
 }

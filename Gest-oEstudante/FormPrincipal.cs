@@ -16,5 +16,11 @@ namespace Gest_oEstudante
         {
             InitializeComponent();
         }
+
+        private void inserirEstudanteToolStripMenuItem_Click(object sender, EventArgs e)
+        {
+            FormInserirEstudante inserirEstudante= new FormInserirEstudante();
+            inserirEstudante.Show(this);
+        }
     }
 }

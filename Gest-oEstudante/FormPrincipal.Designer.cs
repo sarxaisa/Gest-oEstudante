@@ -30,14 +30,14 @@
         {
             this.menuStrip1 = new System.Windows.Forms.MenuStrip();
             this.estudanteToolStripMenuItem = new System.Windows.Forms.ToolStripMenuItem();
-            this.cursosToolStripMenuItem = new System.Windows.Forms.ToolStripMenuItem();
-            this.notasToolStripMenuItem = new System.Windows.Forms.ToolStripMenuItem();
             this.inserirEstudanteToolStripMenuItem = new System.Windows.Forms.ToolStripMenuItem();
             this.listarEstudantesToolStripMenuItem = new System.Windows.Forms.ToolStripMenuItem();
             this.estatisticasToolStripMenuItem = new System.Windows.Forms.ToolStripMenuItem();
             this.editarRemoverToolStripMenuItem = new System.Windows.Forms.ToolStripMenuItem();
             this.gerenciarEstudantesToolStripMenuItem1 = new System.Windows.Forms.ToolStripMenuItem();
             this.imprimirToolStripMenuItem = new System.Windows.Forms.ToolStripMenuItem();
+            this.cursosToolStripMenuItem = new System.Windows.Forms.ToolStripMenuItem();
+            this.notasToolStripMenuItem = new System.Windows.Forms.ToolStripMenuItem();
             this.menuStrip1.SuspendLayout();
             this.SuspendLayout();
             // 
@@ -66,28 +66,17 @@
             this.estudanteToolStripMenuItem.Size = new System.Drawing.Size(71, 20);
             this.estudanteToolStripMenuItem.Text = "Estudante";
             // 
-            // cursosToolStripMenuItem
-            // 
-            this.cursosToolStripMenuItem.Name = "cursosToolStripMenuItem";
-            this.cursosToolStripMenuItem.Size = new System.Drawing.Size(55, 20);
-            this.cursosToolStripMenuItem.Text = "Cursos";
-            // 
-            // notasToolStripMenuItem
-            // 
-            this.notasToolStripMenuItem.Name = "notasToolStripMenuItem";
-            this.notasToolStripMenuItem.Size = new System.Drawing.Size(50, 20);
-            this.notasToolStripMenuItem.Text = "Notas";
-            // 
             // inserirEstudanteToolStripMenuItem
             // 
             this.inserirEstudanteToolStripMenuItem.Name = "inserirEstudanteToolStripMenuItem";
-            this.inserirEstudanteToolStripMenuItem.Size = new System.Drawing.Size(180, 22);
+            this.inserirEstudanteToolStripMenuItem.Size = new System.Drawing.Size(184, 22);
             this.inserirEstudanteToolStripMenuItem.Text = "inserir estudante";
+            this.inserirEstudanteToolStripMenuItem.Click += new System.EventHandler(this.inserirEstudanteToolStripMenuItem_Click);
             // 
             // listarEstudantesToolStripMenuItem
             // 
             this.listarEstudantesToolStripMenuItem.Name = "listarEstudantesToolStripMenuItem";
-            this.listarEstudantesToolStripMenuItem.Size = new System.Drawing.Size(180, 22);
+            this.listarEstudantesToolStripMenuItem.Size = new System.Drawing.Size(184, 22);
             this.listarEstudantesToolStripMenuItem.Text = "Listar estudantes";
             // 
             // estatisticasToolStripMenuItem
@@ -114,6 +103,18 @@
             this.imprimirToolStripMenuItem.Size = new System.Drawing.Size(184, 22);
             this.imprimirToolStripMenuItem.Text = "Imprimir";
             // 
+            // cursosToolStripMenuItem
+            // 
+            this.cursosToolStripMenuItem.Name = "cursosToolStripMenuItem";
+            this.cursosToolStripMenuItem.Size = new System.Drawing.Size(55, 20);
+            this.cursosToolStripMenuItem.Text = "Cursos";
+            // 
+            // notasToolStripMenuItem
+            // 
+            this.notasToolStripMenuItem.Name = "notasToolStripMenuItem";
+            this.notasToolStripMenuItem.Size = new System.Drawing.Size(50, 20);
+            this.notasToolStripMenuItem.Text = "Notas";
+            // 
             // FormPrincipal
             // 
             this.AutoScaleDimensions = new System.Drawing.SizeF(6F, 13F);
@@ -124,7 +125,7 @@
             this.MainMenuStrip = this.menuStrip1;
             this.Name = "FormPrincipal";
             this.Text = "SGA-inicio";
-            this.WindowState = System.Windows.Forms.FormWindowState.Minimized;
+            this.WindowState = System.Windows.Forms.FormWindowState.Maximized;
             this.menuStrip1.ResumeLayout(false);
             this.menuStrip1.PerformLayout();
             this.ResumeLayout(false);
