@@ -3,6 +3,7 @@ using System.Collections.Generic;
 using System.ComponentModel;
 using System.Data;
 using System.Drawing;
+using System.IO;
 using System.Linq;
 using System.Text;
 using System.Threading.Tasks;
@@ -55,15 +56,36 @@ namespace Gest_oEstudante
             
             if (radioButtonFeminino.Checked)
             {
-                genero = "masculinio";
+                genero = "masculino";
+            }
+            MemoryStream foto = MemoryStream();
+            int anoDenascimento = dateTimePickerNacimento.Value.Year;
+            int anoAtual = DateTime.Now.Year;
+            if ((anoAtual - anoDenascimento) < 10 ||
+                (anoAtual - anoDenascimento) > 100
+                )
+            {
+                MessageBox.Show("A idade precisa ser entre 10 e 100 anos!",
+                    "idade invalida",
+                    MessageBoxButtons.OK, MessageBoxIcon.Error);
+            }
+            else if (verificar())
+            {
+
             }
         }
+
+        private MemoryStream MemoryStream()
+        {
+            throw new NotImplementedException();
+        }
+
         bool verificar() 
         {
-            if ((textboxNome.Text.Trim() = "") ||
-                (textboxSobrenome.Text.Trim() = "") ||
-                (textboxTelefone.Text.Trim() = "") ||
-                (textboxEndereco.Text.Trim() = "") ||
+            if ((textboxNome.Text.Trim() == "") ||
+                (textboxSobrenome.Text.Trim() == "") ||
+                (textboxTelefone.Text.Trim() == "") ||
+                (textboxEndereco.Text.Trim() == "") ||
                 (pictureFoto.Image == null))
             {
                 return false;
