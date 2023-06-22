@@ -71,7 +71,7 @@ namespace Gest_oEstudante
             }
             else if (verificar())
             {
-
+                pictureFoto.Image.Save(foto, pictureFoto.Image.RawFormat);
             }
         }
 
