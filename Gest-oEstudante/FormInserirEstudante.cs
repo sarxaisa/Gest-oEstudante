@@ -19,13 +19,64 @@ namespace Gest_oEstudante
 
         private void FormInserirEstudante_Load(object sender, EventArgs e)
         {
-            FormInserirEstudante inserirEstudante = new FormInserirEstudante();
-            inserirEstudante.Show(this);
+            //FormInserirEstudante inserirEstudante = new FormInserirEstudante();
+            // inserirEstudante.Show(this);
         }
 
         private void groupBox1_Enter(object sender, EventArgs e)
         {
 
+        }
+
+        private void btnEnviarFoto_Click(object sender, EventArgs e)
+        {
+            OpenFileDialog abrirArquivo = new OpenFileDialog();
+            abrirArquivo.Filter = "Selecionar a foto(*.jpg;*.png;*.gif)|*.jpg;*.png;*.gif";
+            if (abrirArquivo.ShowDialog() == DialogResult.OK)
+            {
+                pictureFoto.Image = Image.FromFile(abrirArquivo.FileName);
+            }
+        }
+
+        private void btnCancelar_Click(object sender, EventArgs e)
+        {
+            Close();
+        }
+
+        private void btnCadastrar_Click(object sender, EventArgs e)
+        {
+            Estudante estudante= new Estudante();
+            string nome = textboxNome.Text;
+            string sobrenome = textboxSobrenome.Text;
+            DateTime nacimento = dateTimePickerNacimento.Value;
+            string telefone = textboxTelefone.Text;
+            string endereco = textboxEndereco.Text;
+            string genero = "Feminino";
+            
+            if (radioButtonFeminino.Checked)
+            {
+                genero = "masculinio";
+            }
+        }
+        bool verificar() 
+        {
+            if ((textboxNome.Text.Trim() = "") ||
+                (textboxSobrenome.Text.Trim() = "") ||
+                (textboxTelefone.Text.Trim() = "") ||
+                (textboxEndereco.Text.Trim() = "") ||
+                (pictureFoto.Image == null))
+            {
+                return false;
+            }
+            else 
+            {
+                return true;
+            }
+        }
+
+        private void pictureBox1_Click(object sender, EventArgs e)
+        {
+           
         }
     }
 }
