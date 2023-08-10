@@ -1,6 +1,7 @@
 ﻿using MySql.Data.MySqlClient;
 using System;
 using System.Collections.Generic;
+using System.Data;
 using System.IO;
 using System.Linq;
 using System.Runtime.InteropServices.ComTypes;
@@ -19,12 +20,12 @@ namespace Gest_oEstudante
             DateTime nacimento, string telefone, string genero, 
             string endereco, MemoryStream foto)
         {
-            MySqlCommand comando = new MySqlCommand("\"INSERT INTO `estudantes id`(`nome`, `sobrenome`, `nascimento`, `genero`, `telefone`, `endereco`, `foto`) VALUES ('@nm','@sbn','@nsc','@gen','@tel','@end','\\\"fot')\"",
+            MySqlCommand comando = new MySqlCommand("INSERT INTO `estudantes id`(`nome`, `sobrenome`, `nascimento`, `genero`, `telefone`, `endereco`, `foto`) VALUES (@nm,@sbn,@nsc,@gen,@tel,@end,@fot)",
                 bancoDeDados.getConexao);
 
             comando.Parameters.Add("@nm", MySqlDbType.VarChar).Value = nome;
             comando.Parameters.Add("@sbn", MySqlDbType.VarChar).Value = sobrenome;
-            comando.Parameters.Add("@nsc", MySqlDbType.Date).Value = nascimento;
+            comando.Parameters.Add("@nsc", MySqlDbType.Date). Value= nacimento;
             comando.Parameters.Add("@gen", MySqlDbType.VarChar).Value = genero;
             comando.Parameters.Add("@tel", MySqlDbType.VarChar).Value = telefone;
             comando.Parameters.Add("@end", MySqlDbType.VarChar).Value = endereco;
@@ -41,6 +42,16 @@ namespace Gest_oEstudante
                 bancoDeDados.fecharConexao();
                 return false;
             }
+        }
+        public DataTable getEstudantes(MySqlCommand comando)
+        {
+            comando.Connection = bancoDeDados.getConexao;
+            MySqlDataAdapter adaptador = new MySqlDataAdapter(comando);
+            DataTable tabela= new DataTable();
+            adaptador.Fill(tabela);
+
+            return tabela;
+
         }
     }
 }
