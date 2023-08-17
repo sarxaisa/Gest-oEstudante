@@ -58,7 +58,7 @@ namespace Gest_oEstudante
             {
                 genero = "masculino";
             }
-            MemoryStream foto = MemoryStream();
+            MemoryStream foto = new MemoryStream();
             int anoDenascimento = dateTimePickerNacimento.Value.Year;
             int anoAtual = DateTime.Now.Year;
             if ((anoAtual - anoDenascimento) < 10 ||
@@ -72,13 +72,21 @@ namespace Gest_oEstudante
             else if (verificar())
             {
                 pictureFoto.Image.Save(foto, pictureFoto.Image.RawFormat);
+                if (estudante.inserirEstudante(nome, sobrenome, nacimento, telefone, genero, endereco, foto))
+                {
+                    MessageBox.Show("Novo estudante cadastrado", "sucesso!",
+                        MessageBoxButtons.OK, MessageBoxIcon.Information);
+                }
+                else
+                {
+                    MessageBox.Show("erro", "inserir estudante",
+                        MessageBoxButtons.OK, MessageBoxIcon.Exclamation);
+                }
+
             }
         }
 
-        private MemoryStream MemoryStream()
-        {
-            throw new NotImplementedException();
-        }
+      
 
         bool verificar() 
         {
@@ -99,6 +107,11 @@ namespace Gest_oEstudante
         private void pictureBox1_Click(object sender, EventArgs e)
         {
            
+        }
+
+        private void radioButtonMaculino_CheckedChanged(object sender, EventArgs e)
+        {
+
         }
     }
 }
