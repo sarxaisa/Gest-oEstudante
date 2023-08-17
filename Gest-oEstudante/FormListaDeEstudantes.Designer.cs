@@ -28,32 +28,28 @@
         /// </summary>
         private void InitializeComponent()
         {
-            this.buttonAtualizar = new System.Windows.Forms.Button();
-            this.dataGridViewLista = new System.Windows.Forms.DataGridView();
-            ((System.ComponentModel.ISupportInitialize)(this.dataGridViewLista)).BeginInit();
+            this.button1 = new System.Windows.Forms.Button();
+            this.dataGridView1 = new System.Windows.Forms.DataGridView();
+            ((System.ComponentModel.ISupportInitialize)(this.dataGridView1)).BeginInit();
             this.SuspendLayout();
             // 
-            // buttonAtualizar
+            // button1
             // 
-            this.buttonAtualizar.Font = new System.Drawing.Font("Microsoft Sans Serif", 8.25F, System.Drawing.FontStyle.Bold, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
-            this.buttonAtualizar.Location = new System.Drawing.Point(12, 376);
-            this.buttonAtualizar.Name = "buttonAtualizar";
-            this.buttonAtualizar.Size = new System.Drawing.Size(776, 62);
-            this.buttonAtualizar.TabIndex = 0;
-            this.buttonAtualizar.Text = "Atualizar";
-            this.buttonAtualizar.UseVisualStyleBackColor = true;
-            this.buttonAtualizar.Click += new System.EventHandler(this.dataGridViewLista_DoubleClick);
+            this.button1.Font = new System.Drawing.Font("Microsoft Sans Serif", 8.25F, System.Drawing.FontStyle.Bold, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
+            this.button1.Location = new System.Drawing.Point(12, 376);
+            this.button1.Name = "button1";
+            this.button1.Size = new System.Drawing.Size(776, 62);
+            this.button1.TabIndex = 0;
+            this.button1.Text = "Atualizar";
+            this.button1.UseVisualStyleBackColor = true;
             // 
-            // dataGridViewLista
+            // dataGridView1
             // 
-            this.dataGridViewLista.AutoSizeColumnsMode = System.Windows.Forms.DataGridViewAutoSizeColumnsMode.Fill;
-            this.dataGridViewLista.ColumnHeadersHeightSizeMode = System.Windows.Forms.DataGridViewColumnHeadersHeightSizeMode.AutoSize;
-            this.dataGridViewLista.Location = new System.Drawing.Point(12, 12);
-            this.dataGridViewLista.Name = "dataGridViewLista";
-            this.dataGridViewLista.Size = new System.Drawing.Size(776, 358);
-            this.dataGridViewLista.TabIndex = 1;
-            this.dataGridViewLista.CellContentClick += new System.Windows.Forms.DataGridViewCellEventHandler(this.dataGridViewLista_CellContentClick);
-            this.dataGridViewLista.DoubleClick += new System.EventHandler(this.dataGridViewLista_DoubleClick);
+            this.dataGridView1.ColumnHeadersHeightSizeMode = System.Windows.Forms.DataGridViewColumnHeadersHeightSizeMode.AutoSize;
+            this.dataGridView1.Location = new System.Drawing.Point(12, 12);
+            this.dataGridView1.Name = "dataGridView1";
+            this.dataGridView1.Size = new System.Drawing.Size(776, 358);
+            this.dataGridView1.TabIndex = 1;
             // 
             // FormListaDeEstudantes
             // 
@@ -61,19 +57,19 @@
             this.AutoScaleMode = System.Windows.Forms.AutoScaleMode.Font;
             this.BackColor = System.Drawing.SystemColors.ActiveCaption;
             this.ClientSize = new System.Drawing.Size(800, 450);
-            this.Controls.Add(this.dataGridViewLista);
-            this.Controls.Add(this.buttonAtualizar);
+            this.Controls.Add(this.dataGridView1);
+            this.Controls.Add(this.button1);
             this.Name = "FormListaDeEstudantes";
             this.Text = "FormListaDeEstudantes";
             this.Load += new System.EventHandler(this.FormListaDeEstudantes_Load);
-            ((System.ComponentModel.ISupportInitialize)(this.dataGridViewLista)).EndInit();
+            ((System.ComponentModel.ISupportInitialize)(this.dataGridView1)).EndInit();
             this.ResumeLayout(false);
 
         }
 
         #endregion
 
-        private System.Windows.Forms.Button buttonAtualizar;
-        private System.Windows.Forms.DataGridView dataGridViewLista;
+        private System.Windows.Forms.Button button1;
+        private System.Windows.Forms.DataGridView dataGridView1;
     }
 }

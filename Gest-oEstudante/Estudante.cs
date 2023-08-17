@@ -16,49 +16,23 @@ namespace Gest_oEstudante
         Meu_BD bancoDeDados = new Meu_BD();
         private object nascimento;
 
-        public bool inserirEstudante(string Nome, string Sobrenome,
-            DateTime Nacimento, string Telefone, string Genero, 
-            string Endereco, MemoryStream Foto)
+        public bool inserirEstudante(string nome, string sobrenome,
+            DateTime nacimento, string telefone, string genero, 
+            string endereco, MemoryStream foto)
         {
-            MySqlCommand comando = new MySqlCommand("INSERT INTO `estudantes`(`Nome`, `Sobrenome`, `Nascimento`, `Genero`, `Telefone`, `Endereco`, `Foto`) VALUES (@nm,@sbn,@nsc,@gen,@tel,@end,@fot)",
+            MySqlCommand comando = new MySqlCommand("INSERT INTO `estudantes id`(`nome`, `sobrenome`, `nascimento`, `genero`, `telefone`, `endereco`, `foto`) VALUES (@nm,@sbn,@nsc,@gen,@tel,@end,@fot)",
                 bancoDeDados.getConexao);
 
-            comando.Parameters.Add("@nm", MySqlDbType.VarChar).Value = Nome;
-            comando.Parameters.Add("@sbn", MySqlDbType.VarChar).Value = Sobrenome;
-            comando.Parameters.Add("@nsc", MySqlDbType.Date). Value= Nacimento;
-            comando.Parameters.Add("@gen", MySqlDbType.VarChar).Value = Genero;
-            comando.Parameters.Add("@tel", MySqlDbType.VarChar).Value = Telefone;
-            comando.Parameters.Add("@end", MySqlDbType.VarChar).Value = Endereco;
-            comando.Parameters.Add("@fot", MySqlDbType.LongBlob).Value = Foto.ToArray();
+            comando.Parameters.Add("@nm", MySqlDbType.VarChar).Value = nome;
+            comando.Parameters.Add("@sbn", MySqlDbType.VarChar).Value = sobrenome;
+            comando.Parameters.Add("@nsc", MySqlDbType.Date). Value= nacimento;
+            comando.Parameters.Add("@gen", MySqlDbType.VarChar).Value = genero;
+            comando.Parameters.Add("@tel", MySqlDbType.VarChar).Value = telefone;
+            comando.Parameters.Add("@end", MySqlDbType.VarChar).Value = endereco;
+            comando.Parameters.Add("@fot", MySqlDbType.LongBlob).Value = foto.ToArray();
 
             bancoDeDados.abrirConexao();
-            if (comando.ExecuteNonQuery() == 1)
-            {
-                bancoDeDados.fecharConexao();
-                return true;
-            }
-            else
-            {
-                bancoDeDados.fecharConexao();
-                return false;
-            }
-        }
-        public bool atualizarEstudante (string Nome, string Sobrenome,
-           DateTime Nacimento, string Telefone, string Genero,
-           string Endereco, MemoryStream Foto)
-        {
-            MySqlCommand comando = new MySqlCommand("UPDATE `estudantes` SET `Nome`=@nm,`Sobrenome`=@sbn,`Nascimento`=@nsc,`Genero`=@gen,`Telefone`=@tel,`Endereco`=@end,`Foto`=@fot WHERE `id` = @id",bancoDeDados.getConexao);
-
-            comando.Parameters.Add("@nm", MySqlDbType.VarChar).Value = Nome;
-            comando.Parameters.Add("@sbn", MySqlDbType.VarChar).Value = Sobrenome;
-            comando.Parameters.Add("@nsc", MySqlDbType.Date).Value = Nacimento;
-            comando.Parameters.Add("@gen", MySqlDbType.VarChar).Value = Genero;
-            comando.Parameters.Add("@tel", MySqlDbType.VarChar).Value = Telefone;
-            comando.Parameters.Add("@end", MySqlDbType.VarChar).Value = Endereco;
-            comando.Parameters.Add("@fot", MySqlDbType.LongBlob).Value = Foto.ToArray();
-
-            bancoDeDados.abrirConexao();
-            if (comando.ExecuteNonQuery() == 1)
+            if(comando.ExecuteNonQuery() == 1)
             {
                 bancoDeDados.fecharConexao();
                 return true;
