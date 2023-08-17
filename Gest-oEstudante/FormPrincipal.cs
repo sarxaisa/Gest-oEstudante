@@ -23,6 +23,7 @@ namespace Gest_oEstudante
             inserirEstudante.Show(this);
         }
 
+<<<<<<< HEAD
         private void FormPrincipal_Load(object sender, EventArgs e)
         {
 
@@ -32,6 +33,12 @@ namespace Gest_oEstudante
         {
             FormlistaEstudantes formlistaEstudantes= new FormlistaEstudantes();
             formlistaEstudantes.Show(this);
+=======
+        private void listarEstudantesToolStripMenuItem_Click(object sender, EventArgs e)
+        {
+            FormListaDeEstudantes listaDeEstudantes = new FormListaDeEstudantes();
+            listaDeEstudantes.Show(this);
+>>>>>>> 30d3e266f5af9ad88593417d32decaee0798d4ed
         }
     }
 }

@@ -19,12 +19,16 @@ namespace Gest_oEstudante
             DateTime nacimento, string telefone, string genero, 
             string endereco, MemoryStream foto)
         {
+<<<<<<< HEAD
             MySqlCommand comando = new MySqlCommand("\"INSERT INTO `estudantes id`(`nome`, `sobrenome`, `nascimento`, `genero`, `telefone`, `endereco`, `foto`) VALUES ('@nm','@sbn','@nsc','@gen','@tel','@end','@fot')",
+=======
+            MySqlCommand comando = new MySqlCommand("INSERT INTO `estudantes id`(`nome`, `sobrenome`, `nascimento`, `genero`, `telefone`, `endereco`, `foto`) VALUES (@nm,@sbn,@nsc,@gen,@tel,@end,@fot)",
+>>>>>>> 30d3e266f5af9ad88593417d32decaee0798d4ed
                 bancoDeDados.getConexao);
 
             comando.Parameters.Add("@nm", MySqlDbType.VarChar).Value = nome;
             comando.Parameters.Add("@sbn", MySqlDbType.VarChar).Value = sobrenome;
-            comando.Parameters.Add("@nsc", MySqlDbType.Date).Value = nascimento;
+            comando.Parameters.Add("@nsc", MySqlDbType.Date). Value= nacimento;
             comando.Parameters.Add("@gen", MySqlDbType.VarChar).Value = genero;
             comando.Parameters.Add("@tel", MySqlDbType.VarChar).Value = telefone;
             comando.Parameters.Add("@end", MySqlDbType.VarChar).Value = endereco;
@@ -42,6 +46,7 @@ namespace Gest_oEstudante
                 return false;
             }
         }
+<<<<<<< HEAD
 
         public bool atualizarEstudante(string nome, string sobrenome,
            DateTime nacimento, string telefone, string genero,
@@ -77,6 +82,17 @@ namespace Gest_oEstudante
             adaptador.Fill(tabela);
 
             return tabela;
+=======
+        public DataTable getEstudantes(MySqlCommand comando)
+        {
+            comando.Connection = bancoDeDados.getConexao;
+            MySqlDataAdapter adaptador = new MySqlDataAdapter(comando);
+            DataTable tabela= new DataTable();
+            adaptador.Fill(tabela);
+
+            return tabela;
+
+>>>>>>> 30d3e266f5af9ad88593417d32decaee0798d4ed
         }
     }
 }
