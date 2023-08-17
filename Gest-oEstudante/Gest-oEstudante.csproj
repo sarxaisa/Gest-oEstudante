@@ -7,7 +7,7 @@
     <ProjectGuid>{F0CACDC5-63B6-4D08-BCC6-D3823A9204E0}</ProjectGuid>
     <OutputType>WinExe</OutputType>
     <RootNamespace>Gest_oEstudante</RootNamespace>
-    <AssemblyName>Gest-oEstudante</AssemblyName>
+    <AssemblyName>FormListadeEstudantes</AssemblyName>
     <TargetFrameworkVersion>v4.7.2</TargetFrameworkVersion>
     <FileAlignment>512</FileAlignment>
     <AutoGenerateBindingRedirects>true</AutoGenerateBindingRedirects>
@@ -51,6 +51,12 @@
   <ItemGroup>
     <Compile Include="Class1.cs" />
     <Compile Include="Estudante.cs" />
+    <Compile Include="FormlistaEstudantes.cs">
+      <SubType>Form</SubType>
+    </Compile>
+    <Compile Include="FormlistaEstudantes.Designer.cs">
+      <DependentUpon>FormlistaEstudantes.cs</DependentUpon>
+    </Compile>
     <Compile Include="FormInserirEstudante.cs">
       <SubType>Form</SubType>
     </Compile>
@@ -74,6 +80,9 @@
     <Compile Include="Properties\AssemblyInfo.cs" />
     <EmbeddedResource Include="FormInserirEstudante.resx">
       <DependentUpon>FormInserirEstudante.cs</DependentUpon>
+    </EmbeddedResource>
+    <EmbeddedResource Include="FormlistaEstudantes.resx">
+      <DependentUpon>FormlistaEstudantes.cs</DependentUpon>
     </EmbeddedResource>
     <EmbeddedResource Include="FormPrincipal.resx">
       <DependentUpon>FormPrincipal.cs</DependentUpon>

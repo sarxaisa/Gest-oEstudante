@@ -78,6 +78,7 @@
             this.listarEstudantesToolStripMenuItem.Name = "listarEstudantesToolStripMenuItem";
             this.listarEstudantesToolStripMenuItem.Size = new System.Drawing.Size(184, 22);
             this.listarEstudantesToolStripMenuItem.Text = "Listar estudantes";
+            this.listarEstudantesToolStripMenuItem.Click += new System.EventHandler(this.listarEstudantesToolStripMenuItem_Click);
             // 
             // estatisticasToolStripMenuItem
             // 
@@ -126,6 +127,7 @@
             this.Name = "FormPrincipal";
             this.Text = "SGA-inicio";
             this.WindowState = System.Windows.Forms.FormWindowState.Maximized;
+            this.Load += new System.EventHandler(this.FormPrincipal_Load);
             this.menuStrip1.ResumeLayout(false);
             this.menuStrip1.PerformLayout();
             this.ResumeLayout(false);

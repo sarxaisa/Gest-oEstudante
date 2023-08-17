@@ -22,5 +22,16 @@ namespace Gest_oEstudante
             FormInserirEstudante inserirEstudante= new FormInserirEstudante();
             inserirEstudante.Show(this);
         }
+
+        private void FormPrincipal_Load(object sender, EventArgs e)
+        {
+
+        }
+
+        private void listarEstudantesToolStripMenuItem_Click(object sender, EventArgs e)
+        {
+            FormlistaEstudantes formlistaEstudantes= new FormlistaEstudantes();
+            formlistaEstudantes.Show(this);
+        }
     }
 }
