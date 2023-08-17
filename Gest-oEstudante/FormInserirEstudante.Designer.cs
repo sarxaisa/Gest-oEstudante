@@ -144,6 +144,7 @@
             this.radioButtonMaculino.TabStop = true;
             this.radioButtonMaculino.Text = "Masculino";
             this.radioButtonMaculino.UseVisualStyleBackColor = true;
+            this.radioButtonMaculino.CheckedChanged += new System.EventHandler(this.radioButtonMaculino_CheckedChanged);
             // 
             // textboxTelefone
             // 

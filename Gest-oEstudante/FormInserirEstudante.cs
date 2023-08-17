@@ -108,5 +108,10 @@ namespace Gest_oEstudante
         {
            
         }
+
+        private void radioButtonMaculino_CheckedChanged(object sender, EventArgs e)
+        {
+
+        }
     }
 }
